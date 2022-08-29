@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="section-content padding-y bg">
+    <div class="container">
+        <br />
+        <div class="row">
+            <div class="col-md-12">
+                <form action="{% url 'contact' %}" method="POST">
+                    {% csrf_token %}
+                    <h5>CONTACT US</h5>
+                    <div>
+                        {% include "includes/alerts.html" %}
+                        <label>Thank you!</label>
+                        <br>
+                        Title:
+                        <input type="text" class="form-control" name="title" required>
+                        <br>
+                        Email:
+                        <input type="email" class="form-control" name="email" required>
+                        <br>
+                        Content
+                        <textarea name="content" rows="4" class="form-control" required></textarea>
+                        <br>
+                        <input type="submit" value="Send" class="btn btn-primary">
+                    </div>
+                </form>
+                <br>
+            </div>
+            <!-- col.// -->
+        </div>
+        <!-- row.// -->
+    </div>
+    <!-- container .//  -->
+</section>
+<!-- ========================= SECTION CONTENT END// ========================= -->
+{% endblock %}
