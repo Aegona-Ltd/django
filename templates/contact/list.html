@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="section-content padding-y bg">
+    <div class="container">
+        <br />
+        <div class="row">
+            <div class="col-md-12">
+              {% include "includes/alerts.html" %}
+                <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>Title</th>
+                        <th>Email</th>
+                        <th>Content</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    {% for dt in data %}
+                      <tr>
+                        <td>{{dt.title}}</td>
+                        <td>{{dt.email}}</td>
+                        <td>{{dt.content|safe}}</td>
+                      </tr>
+                    {% endfor %}
+                      
+                    </tbody>
+                  </table>
+                <br>
+            </div>
+            <!-- col.// -->
+        </div>
+        <!-- row.// -->
+    </div>
+    <!-- container .//  -->
+</section>
+<!-- ========================= SECTION CONTENT END// ========================= -->
+{% endblock %}
